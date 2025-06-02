@@ -7,6 +7,10 @@ const Hero = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-green-100 via-emerald-100 to-teal-100">
       {/* Decorative elements */}
@@ -27,14 +31,17 @@ const Hero = () => {
           </div>
         </div>
         
-        <h1 className="text-6xl md:text-7xl font-bold text-gray-800 mb-6 animate-fade-in">
-          Growing
-          <span className="text-green-600 block">Digital Gardens</span>
+        <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4 animate-fade-in">
+          Multimedia Designer
         </h1>
         
+        <h2 className="text-2xl md:text-3xl text-green-600 mb-6 animate-fade-in">
+          Freelance Graphic Designer & Video Editor
+        </h2>
+        
         <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto animate-fade-in">
-          I'm a passionate developer who cultivates beautiful, functional web experiences 
-          that grow and flourish in the digital landscape.
+          I create compelling visual stories through graphic design, video editing, 
+          and multimedia content that helps brands grow and connect with their audience.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
@@ -42,13 +49,14 @@ const Hero = () => {
             onClick={scrollToAbout}
             className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105"
           >
-            Explore My Work
+            View My Work
           </Button>
           <Button 
+            onClick={scrollToContact}
             variant="outline"
             className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105"
           >
-            Get In Touch
+            Contact Me
           </Button>
         </div>
         

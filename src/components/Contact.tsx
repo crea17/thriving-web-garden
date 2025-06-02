@@ -1,5 +1,5 @@
 
-import { Leaf, TreeDeciduous, Sprout } from 'lucide-react';
+import { Leaf, TreeDeciduous, Sprout, Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const Contact = () => {
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-green-900 via-emerald-800 to-teal-900 text-white relative overflow-hidden">
+    <section id="contact" className="py-20 px-6 bg-gradient-to-br from-green-900 via-emerald-800 to-teal-900 text-white relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-20 left-10 animate-float">
         <Leaf className="text-green-300 w-12 h-12 opacity-30" />
@@ -22,12 +22,12 @@ const Contact = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Let's Grow Something Together
+            Let's Create Something Amazing
           </h2>
           <div className="w-24 h-1 bg-green-400 mx-auto mb-8"></div>
           <p className="text-xl text-green-100 max-w-3xl mx-auto">
-            Ready to plant the seeds of your next project? 
-            I'd love to help cultivate your ideas into reality.
+            Ready to bring your vision to life? I'd love to discuss your project 
+            and explore how we can work together to achieve your goals.
           </p>
         </div>
         
@@ -36,69 +36,106 @@ const Contact = () => {
           <Card className="bg-white/10 backdrop-blur-sm border-white/20">
             <CardHeader>
               <CardTitle className="text-2xl text-white flex items-center gap-2">
-                <Leaf className="w-6 h-6 text-green-400" />
-                Send a Message
+                <Send className="w-6 h-6 text-green-400" />
+                Get In Touch
               </CardTitle>
+              <p className="text-green-200">
+                Fill out the form below and I'll get back to you within 24 hours.
+              </p>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-green-200 text-sm font-medium mb-2">
-                    First Name
+                    First Name *
                   </label>
                   <Input 
                     placeholder="Your first name"
                     className="bg-white/20 border-white/30 text-white placeholder-green-200"
+                    required
                   />
                 </div>
                 <div>
                   <label className="block text-green-200 text-sm font-medium mb-2">
-                    Last Name
+                    Last Name *
                   </label>
                   <Input 
                     placeholder="Your last name"
                     className="bg-white/20 border-white/30 text-white placeholder-green-200"
+                    required
                   />
                 </div>
               </div>
               
               <div>
                 <label className="block text-green-200 text-sm font-medium mb-2">
-                  Email
+                  Email Address *
                 </label>
                 <Input 
                   type="email"
                   placeholder="your.email@example.com"
+                  className="bg-white/20 border-white/30 text-white placeholder-green-200"
+                  required
+                />
+              </div>
+              
+              <div>
+                <label className="block text-green-200 text-sm font-medium mb-2">
+                  Phone Number
+                </label>
+                <Input 
+                  type="tel"
+                  placeholder="(555) 123-4567"
                   className="bg-white/20 border-white/30 text-white placeholder-green-200"
                 />
               </div>
               
               <div>
                 <label className="block text-green-200 text-sm font-medium mb-2">
-                  Project Type
+                  Project Type *
                 </label>
-                <select className="w-full p-3 rounded-md bg-white/20 border border-white/30 text-white">
+                <select className="w-full p-3 rounded-md bg-white/20 border border-white/30 text-white" required>
                   <option value="">Select a project type</option>
-                  <option value="web">Web Application</option>
-                  <option value="mobile">Mobile App</option>
-                  <option value="ecommerce">E-commerce</option>
+                  <option value="branding">Brand Identity & Logo Design</option>
+                  <option value="video">Video Editing & Production</option>
+                  <option value="web">Web Design</option>
+                  <option value="print">Print Design</option>
+                  <option value="photography">Photography</option>
+                  <option value="social">Social Media Content</option>
+                  <option value="consultation">Design Consultation</option>
                   <option value="other">Other</option>
                 </select>
               </div>
               
               <div>
                 <label className="block text-green-200 text-sm font-medium mb-2">
-                  Message
+                  Project Budget
+                </label>
+                <select className="w-full p-3 rounded-md bg-white/20 border border-white/30 text-white">
+                  <option value="">Select budget range</option>
+                  <option value="under-1k">Under $1,000</option>
+                  <option value="1k-5k">$1,000 - $5,000</option>
+                  <option value="5k-10k">$5,000 - $10,000</option>
+                  <option value="10k-plus">$10,000+</option>
+                  <option value="discuss">Let's discuss</option>
+                </select>
+              </div>
+              
+              <div>
+                <label className="block text-green-200 text-sm font-medium mb-2">
+                  Project Details *
                 </label>
                 <Textarea 
-                  placeholder="Tell me about your project ideas..."
+                  placeholder="Tell me about your project goals, timeline, and any specific requirements..."
                   rows={4}
                   className="bg-white/20 border-white/30 text-white placeholder-green-200"
+                  required
                 />
               </div>
               
               <Button className="w-full bg-green-600 hover:bg-green-700 text-white py-3 text-lg transition-all duration-300 hover:scale-105">
-                Plant the Seeds
+                <Send className="w-5 h-5 mr-2" />
+                Send Message
               </Button>
             </CardContent>
           </Card>
@@ -107,53 +144,89 @@ const Contact = () => {
           <div className="space-y-8">
             <div>
               <h3 className="text-3xl font-bold mb-6 text-green-100">
-                Let's Connect
+                Get In Touch
               </h3>
               <p className="text-lg text-green-200 leading-relaxed mb-8">
-                Whether you have a specific project in mind or just want to explore 
-                possibilities, I'm here to help your ideas flourish. Every great 
-                project starts with a conversation.
+                Whether you're a startup looking to establish your brand or an 
+                established company needing fresh creative direction, I'm here to help 
+                bring your vision to life with professional multimedia design services.
               </p>
             </div>
             
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">📧</span>
+                  <Mail className="text-white w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-green-100">Email</h4>
-                  <p className="text-green-200">hello@gardendev.com</p>
+                  <p className="text-green-200">hello@multimediadesigner.com</p>
+                  <p className="text-sm text-green-300">Primary contact method</p>
                 </div>
               </div>
               
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">💼</span>
+                  <Phone className="text-white w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-green-100">LinkedIn</h4>
-                  <p className="text-green-200">linkedin.com/in/gardendev</p>
+                  <h4 className="font-semibold text-green-100">Phone</h4>
+                  <p className="text-green-200">(555) 123-4567</p>
+                  <p className="text-sm text-green-300">Available for consultations</p>
                 </div>
               </div>
               
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">🐙</span>
+                  <MapPin className="text-white w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-green-100">GitHub</h4>
-                  <p className="text-green-200">github.com/gardendev</p>
+                  <h4 className="font-semibold text-green-100">Location</h4>
+                  <p className="text-green-200">San Francisco, CA</p>
+                  <p className="text-sm text-green-300">Remote work worldwide</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
+                  <Clock className="text-white w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-green-100">Response Time</h4>
+                  <p className="text-green-200">Within 24 hours</p>
+                  <p className="text-sm text-green-300">Usually much faster!</p>
                 </div>
               </div>
             </div>
             
+            {/* Professional Links */}
+            <div className="space-y-4">
+              <h4 className="font-semibold text-green-100">Connect With Me</h4>
+              <div className="grid grid-cols-2 gap-4">
+                <Button variant="outline" className="border-green-400 text-green-200 hover:bg-green-600 hover:text-white">
+                  LinkedIn
+                </Button>
+                <Button variant="outline" className="border-green-400 text-green-200 hover:bg-green-600 hover:text-white">
+                  Behance
+                </Button>
+                <Button variant="outline" className="border-green-400 text-green-200 hover:bg-green-600 hover:text-white">
+                  Instagram
+                </Button>
+                <Button variant="outline" className="border-green-400 text-green-200 hover:bg-green-600 hover:text-white">
+                  Dribbble
+                </Button>
+              </div>
+            </div>
+            
             <div className="mt-12 p-6 bg-white/10 rounded-lg backdrop-blur-sm">
-              <h4 className="font-semibold text-green-100 mb-3">Response Time</h4>
-              <p className="text-green-200">
-                I typically respond within 24 hours. For urgent projects, 
-                feel free to mention it in your message!
-              </p>
+              <h4 className="font-semibold text-green-100 mb-3">What to Expect</h4>
+              <ul className="text-green-200 space-y-2 text-sm">
+                <li>• Free initial consultation to discuss your project</li>
+                <li>• Detailed proposal with timeline and pricing</li>
+                <li>• Regular updates throughout the project</li>
+                <li>• Unlimited revisions until you're 100% satisfied</li>
+                <li>• Final files delivered in all required formats</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -161,7 +234,7 @@ const Contact = () => {
         {/* Footer */}
         <div className="mt-20 pt-8 border-t border-white/20 text-center">
           <p className="text-green-200">
-            © 2024 Garden Dev Portfolio. Growing digital experiences with care.
+            © 2024 Multimedia Designer Portfolio. Creating visual stories that inspire action.
           </p>
         </div>
       </div>
