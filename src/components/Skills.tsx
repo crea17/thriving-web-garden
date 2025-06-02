@@ -14,7 +14,7 @@ const Skills = () => {
         { name: "Typography", level: 5 },
         { name: "Layout Design", level: 5 }
       ],
-      color: "green"
+      color: "pink"
     },
     {
       title: "Video Production", 
@@ -26,7 +26,7 @@ const Skills = () => {
         { name: "Motion Graphics", level: 4 },
         { name: "Sound Design", level: 3 }
       ],
-      color: "emerald"
+      color: "rose"
     },
     {
       title: "Photography",
@@ -38,7 +38,7 @@ const Skills = () => {
         { name: "Lighting Setup", level: 4 },
         { name: "Studio Management", level: 3 }
       ],
-      color: "teal"
+      color: "pink"
     },
     {
       title: "Digital Design",
@@ -50,7 +50,7 @@ const Skills = () => {
         { name: "Email Design", level: 4 },
         { name: "Responsive Design", level: 4 }
       ],
-      color: "green"
+      color: "rose"
     },
     {
       title: "Creative Strategy",
@@ -62,7 +62,7 @@ const Skills = () => {
         { name: "Trend Analysis", level: 4 },
         { name: "Concept Development", level: 5 }
       ],
-      color: "emerald"
+      color: "pink"
     },
     {
       title: "Client Relations",
@@ -74,27 +74,26 @@ const Skills = () => {
         { name: "Feedback Integration", level: 5 },
         { name: "Timeline Management", level: 4 }
       ],
-      color: "teal"
+      color: "rose"
     }
   ];
 
   const getColorClasses = (color: string) => {
     const colorMap = {
-      green: { bg: "bg-green-600", text: "text-green-600", light: "bg-green-100" },
-      emerald: { bg: "bg-emerald-600", text: "text-emerald-600", light: "bg-emerald-100" },
-      teal: { bg: "bg-teal-600", text: "text-teal-600", light: "bg-teal-100" }
+      pink: { bg: "bg-gradient-to-r from-pink-500 to-rose-600", text: "text-pink-600", light: "bg-pink-100" },
+      rose: { bg: "bg-gradient-to-r from-rose-500 to-pink-600", text: "text-rose-600", light: "bg-rose-100" }
     };
-    return colorMap[color as keyof typeof colorMap] || colorMap.green;
+    return colorMap[color as keyof typeof colorMap] || colorMap.pink;
   };
 
   return (
     <section className="py-20 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 font-serif">
             Skills & Expertise
           </h2>
-          <div className="w-24 h-1 bg-green-600 mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-rose-600 mx-auto mb-8"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             A comprehensive toolkit developed through years of hands-on experience 
             across diverse projects and industries.
@@ -106,13 +105,13 @@ const Skills = () => {
             const colors = getColorClasses(category.color);
             
             return (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-0 bg-gradient-to-br from-white to-gray-50">
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-0 bg-gradient-to-br from-white to-pink-50">
                 <CardContent className="p-6">
                   <div className="text-center mb-6">
                     <div className={`inline-flex items-center justify-center w-16 h-16 ${colors.bg} rounded-full mb-4 group-hover:scale-110 transition-transform duration-300`}>
                       <category.icon className="text-white w-8 h-8" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-800">{category.title}</h3>
+                    <h3 className="text-xl font-bold text-gray-800 font-serif">{category.title}</h3>
                   </div>
                   
                   <div className="space-y-3">
@@ -129,7 +128,7 @@ const Skills = () => {
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-2">
                           <div 
-                            className={`${colors.bg} h-2 rounded-full transition-all duration-500`}
+                            className="bg-gradient-to-r from-pink-500 to-rose-600 h-2 rounded-full transition-all duration-500"
                             style={{ width: `${(skill.level / 5) * 100}%` }}
                           ></div>
                         </div>
@@ -144,14 +143,14 @@ const Skills = () => {
         
         {/* Software Proficiency */}
         <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold text-gray-800 mb-8">Software Proficiency</h3>
+          <h3 className="text-2xl font-bold text-gray-800 mb-8 font-serif">Software Proficiency</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {[
               "Adobe Photoshop", "Adobe Illustrator", "Adobe Premiere Pro", 
               "Adobe After Effects", "Adobe InDesign", "Figma", 
               "Cinema 4D", "DaVinci Resolve", "Canva Pro", "Sketch"
             ].map((software, index) => (
-              <div key={index} className="p-4 bg-gray-50 rounded-lg hover:bg-green-50 transition-colors duration-200">
+              <div key={index} className="p-4 bg-pink-50 rounded-lg hover:bg-pink-100 transition-colors duration-200 border border-pink-100">
                 <p className="text-sm font-medium text-gray-700">{software}</p>
               </div>
             ))}

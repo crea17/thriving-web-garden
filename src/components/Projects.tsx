@@ -94,13 +94,13 @@ const Projects = () => {
     : projects.filter(project => project.category === activeCategory);
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-green-50 to-emerald-50">
+    <section className="py-20 px-6 bg-gradient-to-br from-pink-50 via-rose-50 to-pink-100">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 font-serif">
             Portfolio Gallery
           </h2>
-          <div className="w-24 h-1 bg-green-600 mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-rose-600 mx-auto mb-8"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             A showcase of my recent work across different mediums and industries, 
             each project crafted with attention to detail and strategic thinking.
@@ -116,8 +116,8 @@ const Projects = () => {
               variant={activeCategory === category.id ? 'default' : 'outline'}
               className={`${
                 activeCategory === category.id
-                  ? 'bg-green-600 hover:bg-green-700 text-white'
-                  : 'border-green-600 text-green-600 hover:bg-green-600 hover:text-white'
+                  ? 'bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white'
+                  : 'border-pink-500 text-pink-600 hover:bg-pink-500 hover:text-white'
               } transition-all duration-300`}
             >
               <category.icon className="w-4 h-4 mr-2" />
@@ -139,7 +139,7 @@ const Projects = () => {
                 
                 {/* Project Type Badge */}
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-green-600 text-white text-xs font-semibold rounded-full">
+                  <span className="px-3 py-1 bg-gradient-to-r from-pink-500 to-rose-600 text-white text-xs font-semibold rounded-full">
                     {project.type}
                   </span>
                 </div>
@@ -156,12 +156,12 @@ const Projects = () => {
                 {/* Client Name */}
                 <div className="absolute bottom-4 left-4">
                   <p className="text-white text-sm font-medium">{project.client}</p>
-                  <p className="text-green-200 text-xs">{project.duration}</p>
+                  <p className="text-pink-200 text-xs">{project.duration}</p>
                 </div>
               </div>
               
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-green-600 transition-colors">
+                <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-pink-600 transition-colors font-serif">
                   {project.title}
                 </h3>
                 
@@ -170,20 +170,20 @@ const Projects = () => {
                 </p>
                 
                 {/* Results */}
-                <div className="mb-4 p-3 bg-green-50 rounded-lg">
-                  <p className="text-sm font-semibold text-green-800">Results:</p>
-                  <p className="text-sm text-green-700">{project.results}</p>
+                <div className="mb-4 p-3 bg-pink-50 rounded-lg">
+                  <p className="text-sm font-semibold text-pink-800">Results:</p>
+                  <p className="text-sm text-pink-700">{project.results}</p>
                 </div>
                 
                 {/* Testimonial */}
-                <blockquote className="italic text-gray-600 text-sm mb-4 border-l-4 border-green-200 pl-3">
+                <blockquote className="italic text-gray-600 text-sm mb-4 border-l-4 border-pink-200 pl-3">
                   "{project.testimonial}"
                 </blockquote>
                 
                 <div className="flex gap-2">
                   <Button 
                     size="sm" 
-                    className="bg-green-600 hover:bg-green-700 text-white flex-1"
+                    className="bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white flex-1"
                   >
                     <Eye className="w-4 h-4 mr-2" />
                     View Details
@@ -191,7 +191,7 @@ const Projects = () => {
                   <Button 
                     size="sm" 
                     variant="outline" 
-                    className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
+                    className="border-pink-500 text-pink-600 hover:bg-pink-500 hover:text-white"
                   >
                     <ExternalLink className="w-4 h-4" />
                   </Button>
@@ -208,7 +208,7 @@ const Projects = () => {
           </p>
           <Button 
             size="lg"
-            className="bg-green-600 hover:bg-green-700 text-white px-8 py-3"
+            className="bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white px-8 py-3 shadow-lg"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Start Your Project
